@@ -1,0 +1,49 @@
+<zk>
+	<imageslider apply="test.ctrl.DemoWindowComposer" id="myComp"
+		onSelect="" viewportSize="3" imageWidth="200">
+<!-- 		alert(self.getSelectedItem()) -->
+		<image id="ch1" src="img/ironman-01.jpg" />
+		<image id="ch2" src="img/ironman-02.jpg" />
+		<image id="ch3" src="img/ironman-03.jpg" />
+		<image id="ch4" src="img/ironman-04.jpg" />
+		<image id="ch5" src="img/ironman-05.jpg" />
+	</imageslider>
+	<vlayout style="margin:auto; width:1000px;">
+		<hlayout>
+			<button onClick="myComp.setViewportSize(1)">setViewportSize(1)</button>
+			<button onClick="myComp.setViewportSize(2)">setViewportSize(2)</button>
+			<button onClick="myComp.setViewportSize(3)">setViewportSize(3)</button>
+			<button onClick="myComp.setViewportSize(4)">setViewportSize(4)</button>
+			<button onClick="myComp.setViewportSize(5)">setViewportSize(5)</button>
+		</hlayout>
+		<hlayout>
+	<button onClick="myComp.setSelectedIndex(0)">setSelectedIndex(0)</button>
+	<button onClick="myComp.setSelectedIndex(1)">setSelectedIndex(1)</button>
+	<button onClick="myComp.setSelectedIndex(2)">setSelectedIndex(2)</button>
+	<button onClick="myComp.setSelectedIndex(3)">setSelectedIndex(3)</button>
+	<button onClick="myComp.setSelectedIndex(4)">setSelectedIndex(4)</button>
+		</hlayout>
+		<hlayout>
+	<button onClick="myComp.removeChild(ch1)">removeChild(ch1)</button>
+	<button onClick="myComp.removeChild(ch2)">removeChild(ch2)</button>
+	<button onClick="myComp.removeChild(ch3)">removeChild(ch3)</button>
+	<button onClick="myComp.removeChild(ch4)">removeChild(ch4)</button>
+	<button onClick="myComp.removeChild(ch5)">removeChild(ch5)</button>
+		</hlayout>
+		<zscript>
+			Image img1 = new Image();
+			img1.setSrc("img/ironman-01.jpg");
+			
+			Image img2 = new Image();
+			img2.setSrc("img/ironman-05.jpg");
+		</zscript>
+		<hlayout>
+	<button onClick="myComp.appendChild(img1)">newChild(append)</button>
+	<button onClick="myComp.insertBefore(img2, ch3)">newChild(insert)</button>
+		</hlayout>
+		<button onClick="alert(myComp.getSelectedIndex())">getSelectedIndex()</button>
+		<button onClick="alert(myComp.getSelectedItem())">getSelectedItem()</button>
+		<button onClick="myComp.setImageWidth(100)">setImageWidth(100)</button>
+		<button onClick="myComp.setImageWidth(200)">setImageWidth(200)</button>
+	</vlayout>
+</zk>
